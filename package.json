@@ -1,5 +1,6 @@
 {
   "name": "web_front",
+  "homepage": "http://pjs.or.kr",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

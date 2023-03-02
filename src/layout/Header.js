@@ -43,23 +43,23 @@ function Header(props) {
 
     return (
         <div>
-            <div className="flex px-40 w-full h-24 items-center border-b border-1 border-r-neutral-400">
-                <div className="flex w-2/12 h-24 ">
+            <div className="flex 2xl:px-40 w-full h-24 items-center border-b border-1 border-r-neutral-400">
+                <div className="flex md:w-2/12 sm:w-1/3 h-24 ">
                     <div className="w-1/5">
                         <div className="mt-5 ml-1 w-16 h-16 rounded-full drop-shadow-xl">
                             {/*프로필사진*/}
                             <img src={pepe} className="userPortrait w-16 h-16 rounded-full" alt="setting icon"/>
                         </div>
                     </div>
-                    <div className="mt-8 pl-4 w-10/12 h-16 text-sm text-gray-900  text-[13px]">
+                    <div className="mt-8 pl-4  w-10/12 h-16 text-sm text-gray-900  text-[13px]">
                         {/*접속자 정보*/}
-                        <button>닉네임일이삼사오륙칠팔구</button>
+                        <button className="hidden xl:block xl:px-3">닉네임일이삼사오륙칠팔구</button>
                         {/*알림*/}
-                        <div className="flex mt-4 ml-4">
-                            <div className="mr-4 w-4 h-4">
+                        <div className="flex xl:mt-3 xl:ml-3 lg:mt-4 lg:ml-9 md:mt-5 md:ml-9 sm:mt-4 sm:ml-12">
+                            <div className="mr-3 w-4 h-4">
                             <img src={setting} className="settingIcon" alt="setting icon"/>
                             </div>
-                            <div className=" w-4 h-4">
+                            <div className="w-4 h-4">
                                 <img src={notification} className="alarmIcon" alt="alarm icon"/>
                             </div>
                         </div>
@@ -67,14 +67,14 @@ function Header(props) {
                 </div>
 
                 {/*메뉴목록*/}
-                <div className="w-5/12 h-24">
+                <div className="w-5/12 h-24 hidden md:block">
                     <Menus menu={menu} handleClick={handleClick}/>
                 </div>
 
                 {/*중간 여백*/}
                 <div className="w-3/12 h-24"></div>
 
-                <div className="flex w-2/12 h-24 justify-between px-2">
+                <div className="flex md:w-2/12 sm:w-2/3 h-24 justify-between px-2">
                     <div className="mt-10">
                         <Search handleSubmit={handleSubmit} value={value} setValue={setValue}/>
                     </div>

@@ -4,7 +4,7 @@ import Menu from "./Menu";
 const Menus = React.memo(({menu,handleClick}) => {
     return (
         <div>
-            <div className="flex">
+            <div className="md:flex hidden">
                 {menu.map((data)=>(
                     <Menu
                         key={data.id}
