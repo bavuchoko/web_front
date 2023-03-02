@@ -1,0 +1,90 @@
+import React, {useCallback, useState} from 'react';
+import bell from '../assets/icons/bell.png'
+import pepe from '../assets/portfolio/pepe.jpg'
+import notification from '../assets/icons/notification.png'
+import setting from '../assets/icons/setting.png'
+import github from '../assets/icons/github.png'
+import Menus from "../components/header/menu/Menus";
+import Search from "../components/search/Search";
+
+function Header(props) {
+    const [value, setValue] = useState("");
+    const handleSubmit =(e)=> {
+        e.preventDefault();
+
+        let newTodo ={
+            id: Date.now(),
+            title: value,
+            completed:false,
+        };
+        setValue("");
+    }
+    const menu=[
+        {
+            id:"1",
+            name:"Java"
+        },
+        {
+            id:"2",
+            name:"Spring"
+        },
+        {
+            id:"3",
+            name:"Database"
+        },
+    ]
+    // const [menu, setMenu] = useState([dummy]);
+
+    const handleClick = useCallback((id)=> {
+        console.log("ss")
+    },[menu]);
+
+
+
+    return (
+        <div>
+            <div className="flex px-40 w-full h-24 items-center border-b border-1 border-r-neutral-400">
+                <div className="flex w-2/12 h-24 ">
+                    <div className="w-1/5">
+                        <div className="mt-5 ml-1 w-16 h-16 rounded-full drop-shadow-xl">
+                            {/*프로필사진*/}
+                            <img src={pepe} className="userPortrait w-16 h-16 rounded-full" alt="setting icon"/>
+                        </div>
+                    </div>
+                    <div className="mt-8 pl-4 w-10/12 h-16 text-sm text-gray-900  text-[13px]">
+                        {/*접속자 정보*/}
+                        <button>닉네임일이삼사오륙칠팔구</button>
+                        {/*알림*/}
+                        <div className="flex mt-4 ml-4">
+                            <div className="mr-4 w-4 h-4">
+                            <img src={setting} className="settingIcon" alt="setting icon"/>
+                            </div>
+                            <div className=" w-4 h-4">
+                                <img src={notification} className="alarmIcon" alt="alarm icon"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/*메뉴목록*/}
+                <div className="w-5/12 h-24">
+                    <Menus menu={menu} handleClick={handleClick}/>
+                </div>
+
+                {/*중간 여백*/}
+                <div className="w-3/12 h-24"></div>
+
+                <div className="flex w-2/12 h-24 justify-between px-2">
+                    <div className="mt-10">
+                        <Search handleSubmit={handleSubmit} value={value} setValue={setValue}/>
+                    </div>
+                    <button className="mt-10 w-8 h-8">
+                        <img src={github} className="" alt="alarm icon"  onClick={() => window.open('https://github.com/bavuchoko', '_blank')}/>
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Header;

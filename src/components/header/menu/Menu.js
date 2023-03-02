@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Category = React.memo( ({id, name, handleClick}) => {
+const Menu = React.memo( ({id, name, handleClick}) => {
     return (
         <div>
             <div
@@ -16,4 +16,4 @@ const Category = React.memo( ({id, name, handleClick}) => {
     );
 })
 
-export default Category;
+export default Menu;

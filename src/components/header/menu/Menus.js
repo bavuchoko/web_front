@@ -1,12 +1,12 @@
 import React from 'react';
-import Category from "./Category";
+import Menu from "./Menu";
 
-const Catergories = React.memo(({menu,handleClick}) => {
+const Menus = React.memo(({menu,handleClick}) => {
     return (
         <div>
             <div className="flex">
                 {menu.map((data)=>(
-                    <Category
+                    <Menu
                         key={data.id}
                         id={data.id}
                         name={data.name}
@@ -18,4 +18,4 @@ const Catergories = React.memo(({menu,handleClick}) => {
     );
 })
 
-export default Catergories;
+export default Menus;

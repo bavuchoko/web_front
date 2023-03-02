@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+img.settingIcon{
+    transition: all 1s ease-out;
+}
+
+img.alarmIcon{
+    transition: all 0.2s ;
+}
+input.searchInput{
+    transition: all 0.2s ;
+}
+img.userPortrait{
+    transition: all 0.7s ease-in-out;
+}
+img.settingIcon:hover {
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+img.userPortrait:hover {
+    -ms-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+img.alarmIcon:hover {
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}

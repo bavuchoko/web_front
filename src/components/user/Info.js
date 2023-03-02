@@ -1,9 +1,12 @@
-import React from 'react';
-
-function Infro(props) {
+import React, {useState} from 'react';
+import {useParams} from "react-router-dom";
+function Info(props) {
+    let param = useParams();
     return (
-        <div></div>
+        <div>
+            <h1>Info of {param.userId}</h1>
+        </div>
     );
 }
 
-export default Infro;
+export default Info;

@@ -1,9 +1,13 @@
 import React from 'react';
+import {Outlet} from "react-router-dom";
 
-function User(props) {
+function User_Home(props) {
     return (
-        <div></div>
+        <div>
+            <h1>User_Home </h1>
+            <Outlet/>
+        </div>
     );
 }
 
-export default User;
+export default User_Home;
