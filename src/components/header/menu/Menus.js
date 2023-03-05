@@ -10,6 +10,7 @@ const Menus = React.memo(({menu,handleClick}) => {
                         key={data.id}
                         id={data.id}
                         name={data.name}
+                        link={data.link}
                         handleClick={handleClick}
                     />
                 ))}

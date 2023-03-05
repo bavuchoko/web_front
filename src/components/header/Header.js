@@ -1,11 +1,12 @@
 import React, {useCallback, useState} from 'react';
-import bell from '../assets/icons/bell.png'
-import pepe from '../assets/portfolio/pepe.jpg'
-import notification from '../assets/icons/notification.png'
-import setting from '../assets/icons/setting.png'
-import github from '../assets/icons/github.png'
-import Menus from "../components/header/menu/Menus";
-import Search from "../components/search/Search";
+import bell from '../../assets/icons/bell.png'
+import pepe from '../../assets/portfolio/pepe.jpg'
+import notification from '../../assets/icons/notification.png'
+import setting from '../../assets/icons/setting.png'
+import github from '../../assets/icons/github.png'
+import Menus from "./menu/Menus";
+import Search from "../search/Search";
+import {Link} from "react-router-dom";
 
 function Header(props) {
     const [value, setValue] = useState("");
@@ -22,15 +23,23 @@ function Header(props) {
     const menu=[
         {
             id:"1",
-            name:"Java"
+            name:"Java",
+            link:"java"
         },
         {
             id:"2",
-            name:"Spring"
+            name:"Spring",
+            link:"spring"
         },
         {
             id:"3",
-            name:"Database"
+            name:"Database",
+            link:"database"
+        },
+        {
+            id:"4",
+            name:"I A R O",
+            link:"iaro/card"
         },
     ]
     // const [menu, setMenu] = useState([dummy]);
@@ -48,7 +57,9 @@ function Header(props) {
                     <div className="w-1/5">
                         <div className="mt-5 ml-1 w-16 h-16 rounded-full drop-shadow-xl">
                             {/*프로필사진*/}
-                            <img src={pepe} className="userPortrait w-16 h-16 rounded-full" alt="setting icon"/>
+                            <Link to="/">
+                                <img src={pepe} className="userPortrait w-16 h-16 rounded-full" alt="setting icon"/>
+                            </Link>
                         </div>
                     </div>
                     <div className="mt-8 pl-4  w-10/12 h-16 text-sm text-gray-900  text-[13px]">
@@ -67,12 +78,12 @@ function Header(props) {
                 </div>
 
                 {/*메뉴목록*/}
-                <div className="w-5/12 h-24 hidden md:block">
+                <div className="w-8/12 2xl:w-6/12  h-24 hidden md:block">
                     <Menus menu={menu} handleClick={handleClick}/>
                 </div>
 
                 {/*중간 여백*/}
-                <div className="w-3/12 h-24"></div>
+                <div className="2xl:w-2/12 h-24"></div>
 
                 <div className="flex md:w-2/12 sm:w-2/3 h-24 justify-between px-2">
                     <div className="mt-10">
