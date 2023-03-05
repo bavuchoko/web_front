@@ -9,7 +9,7 @@ function App() {
             <Header/>
         </div>
         <div className="layoutBody">
-            <div className="2xl:w-1/2 xl:w-3/4 w-full xl:px-0 px-5 h-full m-auto bg-amber-700">
+            <div className="2xl:w-1/2 xl:w-3/4 w-full xl:px-0 px-5 h-full m-auto">
                 <Outlet/>
             </div>
         </div>

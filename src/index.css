@@ -33,3 +33,8 @@ img.alarmIcon:hover {
     -webkit-transform: rotate(-20deg);
     transform: rotate(-20deg);
 }
+
+.columnDiv{
+    min-height: calc(100% - 64px);
+    /*background: #a9bbd9;*/
+}

@@ -10,8 +10,8 @@ function CardTemplete(props) {
                 {
                     key: "1",
                     id: "1",
-                    title: "제목",
-                    content: "내용1",
+                    workSet: "로그인 서버분할",
+                    content: "로그인 사용 객체 변경",
                     charge: "담당자",
                     writer: "등록자",
                     time: "2023-01-01 00:00"
@@ -19,8 +19,8 @@ function CardTemplete(props) {
                 {
                     key: "2",
                     id: "2",
-                    title: "제목",
-                    content: "내용2",
+                    workSet: "로그인 서버분할",
+                    content: "로그인 분할서버 포트세팅",
                     charge: "담당자",
                     writer: "등록자",
                     time: "2023-01-01 00:00"
@@ -28,8 +28,8 @@ function CardTemplete(props) {
                 {
                     key: "3",
                     id: "3",
-                    title: "제목",
-                    content: "내용3",
+                    workSet: "로그인 서버분할",
+                    content: "로그인 페이지 디자인 변경 로그인 페이지 디자인 변경 로그인 페이지 디자인 변경",
                     charge: "담당자",
                     writer: "등록자",
                     time: "2023-01-01 00:00"
@@ -37,7 +37,7 @@ function CardTemplete(props) {
                 {
                     key: "4",
                     id: "4",
-                    title: "제목",
+                    workSet: "제목",
                     content: "내용4",
                     charge: "담당자",
                     writer: "등록자",
@@ -46,7 +46,7 @@ function CardTemplete(props) {
                 {
                     key: "5",
                     id: "5",
-                    title: "제목",
+                    workSet: "제목",
                     content: "내용5",
                     charge: "담당자",
                     writer: "등록자",
@@ -55,7 +55,7 @@ function CardTemplete(props) {
                 {
                     key: "6",
                     id: "6",
-                    title: "제목",
+                    workSet: "제목",
                     content: "내용6",
                     charge: "담당자",
                     writer: "등록자",
@@ -64,7 +64,7 @@ function CardTemplete(props) {
                 {
                     key: "7",
                     id: "7",
-                    title: "제목",
+                    workSet: "제목",
                     content: "내용7",
                     charge: "담당자",
                     writer: "등록자",
@@ -74,16 +74,23 @@ function CardTemplete(props) {
         const columns_d =[
                 {
                     id: "1",
-                    title: "칼럼1",
+                    title: "To do",
                     taskIds:["1","2","3","4"]
                 },
                 {
                     id: "2",
-                    title: "칼럼2",
+                    title: "Doing",
                     taskIds:["5","6","7"]
                 },
+                {
+                    id: "3",
+                    title: "Done",
+                    taskIds:[]
+                }
+
+
         ];
-        const columnOrders_d =  ["1","2"];
+        const columnOrders_d =  ["1","2","3"];
 
 
     const [task, setTasks] = useState(tasks_d);
@@ -105,7 +112,6 @@ function CardTemplete(props) {
                     const columns = column_f[0];
                     const taskId_f = columns.taskIds;
                     const tasks = taskId_f.map((taskId) => task.filter((e)=> e.id ===taskId ));
-                    console.log(tasks)
                     return (
                         <Column column={columns} tasks={tasks} key={columns.id} />
                     );
