@@ -61,7 +61,7 @@ function Header(props) {
                             </Link>
                         </div>
                     </div>
-                    <div className="mt-8 pl-4  w-10/12 h-16 text-sm text-gray-900  text-[13px]">
+                    <div className="mt-8 pl-4  w-10/12 h-16 text-sm text-gray-900  text-[12px]">
                         {/*접속자 정보*/}
                         <button className="hidden xl:block xl:px-3">닉네임일이삼사오륙칠팔구</button>
                         {/*알림*/}
