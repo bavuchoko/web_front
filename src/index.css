@@ -36,5 +36,9 @@ img.alarmIcon:hover {
 
 .columnDiv{
     min-height: calc(100% - 64px);
+    background-color: #ebf4fc;
     /*background: #a9bbd9;*/
+}
+.columns{
+    background-color: aliceblue;
 }

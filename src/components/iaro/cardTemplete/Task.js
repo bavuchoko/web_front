@@ -25,7 +25,7 @@ const WorkingSet = styled.div`
   background-color: ${(props) =>
     props.isDragging
         ? "#ffffff"
-        : "#1e42cb"};
+        : "#3a5eec"};
   color: ${(props) =>
     props.isDragging
         ? "#262626"
@@ -37,10 +37,12 @@ const Content = styled.div`
   font-size: 12px;
   margin-bottom: 4px;
   transition: background-color 0.2s ease;
+  color: #5d5d5d;
+  font-weight: 500;
   background-color: ${(props) =>
-    props.isDragging
-        ? "#ffffff"
-        : "#e8e8e8"};
+          props.isDragging
+                  ? "#ffffff"
+                  : "#ebf1f6"};
 `;
 const Task = React.memo(({task, index}) => {
 
@@ -67,7 +69,7 @@ const Task = React.memo(({task, index}) => {
 
                         <div className="" >
                             <Content
-                                className="bg-gray-200 rounded-md break-after-all"
+                                className="rounded-md break-after-all"
                                 isDragging={snapshot.isDragging}
                             >
                                 {task.content}

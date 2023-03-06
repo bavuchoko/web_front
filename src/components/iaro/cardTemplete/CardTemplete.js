@@ -97,9 +97,38 @@ function CardTemplete(props) {
     const [column, setColumns] = useState(columns_d);
     const [columnOrder, setColumnOrders] = useState(columnOrders_d);
 
-    const onDragEnd =useCallback((result) => {
+    const onDragEnd = useCallback((result) => {
+        const { destination, source, draggableId } = result;
+        if (!destination) return;
+        if (
+            destination.droppableId === source.droppableId &&
+            source.index === destination.index
+        )
+            return;
 
-    },[])
+        const fromColumnId = column.filter((e) => e.id === source.droppableId);
+        const toColumId = column.filter((e) => e.id === destination.droppableId);
+        const newTaskIds = Array.from(fromColumnId[0].taskIds);
+        const toTaskIds = Array.from(toColumId[0].taskIds);
+
+        newTaskIds.splice(source.index, 1);
+
+        toTaskIds.splice(destination.index, 0, draggableId);
+
+
+        const copyColumn = column.map((e) =>
+                                    {
+                                        if(e.id === source.droppableId){
+                                            e.taskIds = newTaskIds ;
+
+                                        }
+                                        if(e.id === destination.droppableId){
+                                            e.taskIds = toTaskIds ;
+                                        }
+                                        return e;
+                                    });
+        setColumns(copyColumn)
+    }, [column]);
 
 
 
