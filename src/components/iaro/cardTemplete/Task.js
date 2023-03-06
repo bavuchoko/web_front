@@ -17,15 +17,17 @@ const Container = styled.div`
   box-shadow: 0px 6px 8px rgba(25, 50, 47, 0.08);
 `;
 const WorkingSet = styled.div`
+  margin-right: 6px;
+  display: inline-block;
+  width: auto;
   border-radius: 40px;
   padding: 3px 8px;
   font-size: 11px;
-  margin-bottom: 5px;
   transition: background-color 0.2s ease;
   background-color: ${(props) =>
     props.isDragging
         ? "#ffffff"
-        : "#3a5eec"};
+        : props.color};
   color: ${(props) =>
     props.isDragging
         ? "#262626"
@@ -36,6 +38,7 @@ const Content = styled.div`
   padding: 6px 10px;
   font-size: 12px;
   margin-bottom: 4px;
+  margin-top: 4px;
   transition: background-color 0.2s ease;
   color: #5d5d5d;
   font-weight: 500;
@@ -58,12 +61,15 @@ const Task = React.memo(({task, index}) => {
                         {...provided.draggableProps}
                     >
                         <div {...provided.dragHandleProps}>
-                            <WorkingSet
-                                className="rounded-2xl bg-indigo-700 w-auto inline-block px-3 py-0.5 text-[12px] text-white my-1.5 mb-3"
-                                isDragging={snapshot.isDragging}
-                            >
-                                {task.workSet}
-                            </WorkingSet>
+                            {task.workSet.map((work, idx) => (
+                                <WorkingSet
+                                    isDragging={snapshot.isDragging}
+                                    color={task.color[idx]}
+                                >
+                                    {work}
+                                </WorkingSet>
+                            ))}
+
                         </div>
 
 

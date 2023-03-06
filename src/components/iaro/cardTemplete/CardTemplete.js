@@ -10,7 +10,8 @@ function CardTemplete(props) {
                 {
                     key: "1",
                     id: "1",
-                    workSet: "로그인 서버분할",
+                    workSet: ["로그인 서버분할","컨트롤러 분리"],
+                    color: ["#3a5eec","#df44ea"],
                     content: "로그인 사용 객체 변경",
                     charge: "담당자",
                     writer: "등록자",
@@ -19,8 +20,9 @@ function CardTemplete(props) {
                 {
                     key: "2",
                     id: "2",
-                    workSet: "로그인 서버분할",
+                    workSet: ["로그인 서버분할","서비스 분리"],
                     content: "로그인 분할서버 포트세팅",
+                    color: ["#3a5eec","#df44ea"],
                     charge: "담당자",
                     writer: "등록자",
                     time: "2023-01-01 00:00"
@@ -28,7 +30,8 @@ function CardTemplete(props) {
                 {
                     key: "3",
                     id: "3",
-                    workSet: "로그인 서버분할",
+                    workSet: ["로그인 서버분할"],
+                    color: ["#3a5eec"],
                     content: "로그인 페이지 디자인 변경 로그인 페이지 디자인 변경 로그인 페이지 디자인 변경",
                     charge: "담당자",
                     writer: "등록자",
@@ -37,7 +40,8 @@ function CardTemplete(props) {
                 {
                     key: "4",
                     id: "4",
-                    workSet: "제목",
+                    workSet: ["제목"],
+                    color: ["#56e82c"],
                     content: "내용4",
                     charge: "담당자",
                     writer: "등록자",
@@ -46,7 +50,8 @@ function CardTemplete(props) {
                 {
                     key: "5",
                     id: "5",
-                    workSet: "제목",
+                    workSet: ["제목"],
+                    color: ["#67e544"],
                     content: "내용5",
                     charge: "담당자",
                     writer: "등록자",
@@ -55,7 +60,8 @@ function CardTemplete(props) {
                 {
                     key: "6",
                     id: "6",
-                    workSet: "제목",
+                    workSet: ["제목"],
+                    color: ["#67e544"],
                     content: "내용6",
                     charge: "담당자",
                     writer: "등록자",
@@ -64,7 +70,8 @@ function CardTemplete(props) {
                 {
                     key: "7",
                     id: "7",
-                    workSet: "제목",
+                    workSet: ["제목"],
+                    color: ["#67e544"],
                     content: "내용7",
                     charge: "담당자",
                     writer: "등록자",
