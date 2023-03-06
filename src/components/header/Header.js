@@ -45,7 +45,6 @@ function Header(props) {
     // const [menu, setMenu] = useState([dummy]);
 
     const handleClick = useCallback((id)=> {
-        console.log("ss")
     },[menu]);
 
 

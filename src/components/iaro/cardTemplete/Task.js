@@ -59,11 +59,13 @@ const Task = React.memo(({task, index}) => {
                         ref={provided.innerRef}
                         isDragging={snapshot.isDragging}
                         {...provided.draggableProps}
+                        {...provided.dragHandleProps}
                     >
-                        <div {...provided.dragHandleProps}>
+                        <div
+                             isdragging={snapshot.isDragging.toString()}>
                             {task.workSet.map((work, idx) => (
                                 <WorkingSet
-                                    isDragging={snapshot.isDragging}
+                                    key={idx}
                                     color={task.color[idx]}
                                 >
                                     {work}
@@ -73,7 +75,7 @@ const Task = React.memo(({task, index}) => {
                         </div>
 
 
-                        <div className="" >
+                        <div className="nodrag" >
                             <Content
                                 className="rounded-md break-after-all"
                                 isDragging={snapshot.isDragging}

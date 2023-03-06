@@ -120,8 +120,12 @@ function CardTemplete(props) {
 
         newTaskIds.splice(source.index, 1);
 
-        toTaskIds.splice(destination.index, 0, draggableId);
-
+        if(source.droppableId != destination.droppableId){
+            toTaskIds.splice(destination.index, 0, draggableId);
+        }else{
+            toTaskIds.splice(source.index, 1);
+            toTaskIds.splice(destination.index, 0, draggableId);
+        }
 
         const copyColumn = column.map((e) =>
                                     {
@@ -142,7 +146,7 @@ function CardTemplete(props) {
     return (
         <div>
             <DragDropContext onDragEnd={onDragEnd}>
-                <div className="flex">
+                <div className="flex nodrag">
                 {columnOrder.map((columnId) => {
                     const column_f = column.filter((column) => column.id === columnId);
                     const columns = column_f[0];

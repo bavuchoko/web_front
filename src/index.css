@@ -42,3 +42,9 @@ img.alarmIcon:hover {
 .columns{
     background-color: aliceblue;
 }
+.nodrag{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
