@@ -11,7 +11,7 @@ function CardTemplete(props) {
                     key: "1",
                     id: "1",
                     workSet: ["로그인 서버분할","컨트롤러 분리"],
-                    color: ["#3a5eec","#df44ea"],
+                    color: ["#3a5eec","#CC0E74"],
                     content: "로그인 사용 객체 변경",
                     charge: "담당자",
                     writer: "등록자",
@@ -22,7 +22,7 @@ function CardTemplete(props) {
                     id: "2",
                     workSet: ["로그인 서버분할","서비스 분리"],
                     content: "로그인 분할서버 포트세팅",
-                    color: ["#3a5eec","#df44ea"],
+                    color: ["#3a5eec","#CC0E74"],
                     charge: "담당자",
                     writer: "등록자",
                     time: "2023-01-01 00:00"

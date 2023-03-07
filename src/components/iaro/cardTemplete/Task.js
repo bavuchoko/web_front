@@ -7,20 +7,21 @@ import styled from "styled-components";
 
 const Container = styled.div`
   border-radius: 5px;
-  padding:3px 4px;
+  padding: 3px 4px;
   margin-bottom: 8px;
   transition: background-color 0.2s ease;
   background-color: ${(props) =>
-        props.isDragging
-            ? "#646464"
-            : "white"};
-  box-shadow: 0px 6px 8px rgba(25, 50, 47, 0.08);
+          props.isDragging
+                  ? "#FFCA03"
+                  : "white"};
+  box-shadow: 5px 8px 10px rgba(56, 255, 0, 0.08);
 `;
 const WorkingSet = styled.div`
   margin-right: 6px;
   display: inline-block;
   width: auto;
   border-radius: 40px;
+  border: none;
   padding: 3px 8px;
   font-size: 11px;
   transition: background-color 0.2s ease;

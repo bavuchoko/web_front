@@ -36,11 +36,11 @@ img.alarmIcon:hover {
 
 .columnDiv{
     min-height: calc(100% - 64px);
-    background-color: #ebf4fc;
+    background-color: #4e7bf8;
     /*background: #a9bbd9;*/
 }
 .columns{
-    background-color: aliceblue;
+    background-color: #2962ff;
 }
 .nodrag{
     -webkit-user-select:none;
