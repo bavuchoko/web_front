@@ -93,11 +93,20 @@ function CardTemplete(props) {
                     id: "3",
                     title: "Done",
                     taskIds:[]
+                },
+                {
+                    id: "4",
+                    title: "Done",
+                    taskIds:[]
+                },                {
+                    id: "5",
+                    title: "Done",
+                    taskIds:[]
                 }
 
 
         ];
-        const columnOrders_d =  ["1","2","3"];
+        const columnOrders_d =  ["1","2","3","4"];
 
 
     const [task, setTasks] = useState(tasks_d);
@@ -146,7 +155,7 @@ function CardTemplete(props) {
     return (
         <div>
             <DragDropContext onDragEnd={onDragEnd}>
-                <div className="flex nodrag">
+                <div className="flex justify-center">
                 {columnOrder.map((columnId) => {
                     const column_f = column.filter((column) => column.id === columnId);
                     const columns = column_f[0];

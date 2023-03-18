@@ -9,7 +9,6 @@ import Join from "./components/user/Join";
 import Info from "./components/user/Info";
 import UserHome from "./components/user/User_Home";
 import IaroLayout from "./components/iaro/IaroLayout";
-import CardTemplete from "./components/iaro/cardTemplete/CardTemplete";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

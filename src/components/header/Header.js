@@ -1,15 +1,18 @@
 import React, {useCallback, useState} from 'react';
 import bell from '../../assets/icons/bell.png'
-import pepe from '../../assets/portfolio/pepe.jpg'
+import anonymous from '../../assets/icons/anonymous.png'
 import notification from '../../assets/icons/notification.png'
 import setting from '../../assets/icons/setting.png'
 import github from '../../assets/icons/github.png'
 import Menus from "./menu/Menus";
 import Search from "../search/Search";
 import {Link} from "react-router-dom";
+import HeaderUserMenu from "../utils/HeaderUserMenu";
 
 function Header(props) {
     const [value, setValue] = useState("");
+    const [userOpen, setUserOpen] =useState(false);
+
     const handleSubmit =(e)=> {
         e.preventDefault();
 
@@ -56,9 +59,10 @@ function Header(props) {
                     <div className="w-1/5">
                         <div className="mt-5 ml-1 w-16 h-16 rounded-full drop-shadow-xl">
                             {/*프로필사진*/}
-                            <Link to="/">
-                                <img src={pepe} className="userPortrait w-16 h-16 rounded-full" alt="setting icon"/>
-                            </Link>
+                            <a href="#" onClick={()=> setUserOpen(!userOpen)}>
+                                <img src={anonymous} className="userPortrait w-16 h-16 rounded-full" alt="setting icon"/>
+                            </a>
+                            {userOpen && <HeaderUserMenu setUserOpen={setUserOpen}/> }
                         </div>
                     </div>
                     <div className="mt-8 pl-4  w-10/12 h-16 text-sm text-gray-900  text-[12px]">

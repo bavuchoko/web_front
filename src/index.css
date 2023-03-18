@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    src: url("./assets/fonts/Roboto/Roboto-Black.ttf") format("truetype");
+}
 
 img.settingIcon{
     transition: all 1s ease-out;
@@ -41,10 +47,28 @@ img.alarmIcon:hover {
 }
 .columns{
     background-color: #2962ff;
+    min-width: 280px;
+    min-height: 600px;
 }
 .nodrag{
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none
+}
+.userMenu{
+    background: #ffffff;
+}
+
+
+@keyframes vibration {
+from {
+        transform: rotate(1deg);
+    }
+to {
+        transform: rotate(-1deg);
+    }
+}
+.box.vibration {
+    animation: vibration 0.1s;
 }
