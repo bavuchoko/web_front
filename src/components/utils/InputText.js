@@ -5,6 +5,7 @@ import forbidden from "../../assets/icons/forbidden.png"
 import checked from "../../assets/icons/checked.png"
 import { useNavigate } from 'react-router-dom';
 import {noAuhApi} from "../../apis/instance/Instance";
+import login from "../user/Login";
 
 
 const InputBox = styled.input`
@@ -51,6 +52,7 @@ function InputText(props) {
     const [message, setMessage]=useState("");
     const [mailType, setMailType]=useState(false);
     const [nameInputMode, setNameInputMode] =useState(true);
+    const [user, setUser] =useState(null);
     const typeUsername = (e) => {
         setUsername(e.target.value)
         if(emailRegEx.test(username)){
@@ -80,27 +82,31 @@ function InputText(props) {
     }
 
     const passwordEnter = (e) => {
-        if(e.key=="Enter"){
-               console.log("username : "  + username);
-               console.log("password : "  + password);
-               console.log("submit")
-
-            const user = {
+        if (e.key == "Enter") {
+            const loginUser = {
                 "username": username,
                 "password": password
             }
-
-            noAuhApi.post(
-                '/user/authentication', user
-            ).then( res =>{
-                const resources = res;
-                console.log(resources)
-                if(resources.status === 200){
-
-                }
-            } )
-
-
+            try {
+                noAuhApi.post(
+                    '/user/authentication', loginUser
+                ).then(res => {
+                    if (res.status === 200) {
+                        localStorage.setItem("accessToken", res.data.accessToken)
+                        let loginUser = {
+                            "username" : res.data.username,
+                            "nickname" : res.data.nickname,
+                            "joinData" : res.data.joinData,
+                            "proifle" : res.data.proifle
+                        }
+                        console.log(loginUser);
+                        localStorage.setItem("loginUser", loginUser)
+                        navigate("/");
+                    }
+                })
+            }catch (error){
+                console.log(error)
+            }
         }
     }
     const backButtonHandler = () => {
@@ -108,10 +114,10 @@ function InputText(props) {
         setNameInputMode(true);
     }
     const homeButtonHandler = () => {
+        setUsername("");
         setPassword("");
-        setNameInputMode(true);
+        navigate('/');
     }
-
 
     return (
         <div>
