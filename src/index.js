@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import MainBody from "./components/main/MainBody";
 import Join from "./components/user/Join";
+import Login from "./components/user/Login";
 import Info from "./components/user/Info";
 import UserHome from "./components/user/User_Home";
 import IaroLayout from "./components/iaro/IaroLayout";
@@ -18,12 +19,12 @@ root.render(
                 <Route index element={<MainBody/>}/>
                 <Route path="user" element={<UserHome/>}>
                     <Route path=":userId" element={<Info/>}/>
-                    <Route path="new" element={<Join/>}/>
-                    <Route path="login" element={<Join/>}/>
                 </Route>
                 <Route path="iaro/*" element={<IaroLayout/>}>
                 </Route>
             </Route>
+            <Route path="join" element={<Join/>}/>
+            <Route path="login" element={<Login/>}/>
         </Routes>
     </BrowserRouter>
 );

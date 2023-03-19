@@ -5,8 +5,6 @@ import forbidden from "../../assets/icons/forbidden.png"
 import checked from "../../assets/icons/checked.png"
 import { useNavigate } from 'react-router-dom';
 import {noAuhApi} from "../../apis/instance/Instance";
-import {useDispatch} from "react-redux";
-import {loginUser} from "../../store/userSlice";
 
 
 const InputBox = styled.input`
@@ -66,7 +64,6 @@ function InputText(props) {
     const typePassword = (e) => {
         setPassword(e.target.value)
     }
-    const dispatch =useDispatch();
     const focusRef =useRef(null);
     const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/;
     const usernameEnter = (e) => {
@@ -110,6 +107,10 @@ function InputText(props) {
         setPassword("");
         setNameInputMode(true);
     }
+    const homeButtonHandler = () => {
+        setPassword("");
+        setNameInputMode(true);
+    }
 
 
     return (
@@ -124,8 +125,8 @@ function InputText(props) {
                                     onChange={typeUsername}
                                     onKeyPress={usernameEnter}
                         />
-                        <button className="w-[90px] float-right " onClick={() => navigate(-1)}>
-                            <img src={leftArrow} className="w-3 h-4 inline-block" /> <span className="text-[11px]">back</span>
+                        <button className="w-[90px] float-right " onClick={homeButtonHandler}>
+                            <img src={leftArrow} className="w-3 h-4 inline-block" /> <span className="text-[11px]">home</span>
                         </button>
                     </div>
                 }
