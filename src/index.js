@@ -10,10 +10,13 @@ import Login from "./components/user/Login";
 import Info from "./components/user/Info";
 import UserHome from "./components/user/User_Home";
 import IaroLayout from "./components/iaro/IaroLayout";
+import {QueryClient, QueryClientProvider} from "react-query";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const queryClient = new QueryClient();
 
 root.render(
+    <QueryClientProvider client={queryClient}>
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />} >
@@ -28,6 +31,7 @@ root.render(
             <Route path="login" element={<Login/>}/>
         </Routes>
     </BrowserRouter>
+    </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

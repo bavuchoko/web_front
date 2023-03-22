@@ -1,19 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Menu from "./Menu";
+import axios from "axios";
+import {useQuery} from "react-query";
 
-const Menus = React.memo(({menu,handleClick}) => {
+const getMenuList = async  () =>{
+    const { data } = await axios.get("http://localhost:8080/menus");
+    return data;
+}
+
+const Menus = React.memo(() => {
+
+    const query =useQuery('menus', getMenuList);
+    console.log(query.data)
     return (
         <div>
             <div className="md:flex hidden">
-                {menu.map((data)=>(
+                {!query.isLoading && (
+                    query.data.map((menu)=>(
+
                     <Menu
-                        key={data.id}
-                        id={data.id}
-                        name={data.name}
-                        link={data.link}
-                        handleClick={handleClick}
+                        key={menu.id}
+                        id={menu.id}
+                        name={menu.name}
+                        uri={menu.uri}
                     />
-                ))}
+                )))}
             </div>
         </div>
     );

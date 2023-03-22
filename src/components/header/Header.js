@@ -24,32 +24,11 @@ function Header(props) {
         };
         setValue("");
     }
-    const menu=[
-        {
-            id:"1",
-            name:"Java",
-            link:"java"
-        },
-        {
-            id:"2",
-            name:"Spring",
-            link:"spring"
-        },
-        {
-            id:"3",
-            name:"Database",
-            link:"database"
-        },
-        {
-            id:"4",
-            name:"I A R O",
-            link:"iaro/card"
-        },
-    ]
+
     // const [menu, setMenu] = useState([dummy]);
 
     const handleClick = useCallback((id)=> {
-    },[menu]);
+    },[]);
 
     const user = localStorage.getItem("loginUser")
 
@@ -90,7 +69,7 @@ function Header(props) {
 
                 {/*메뉴목록*/}
                 <div className="w-8/12 2xl:w-6/12  h-24 hidden md:block">
-                    <Menus menu={menu} handleClick={handleClick}/>
+                    <Menus/>
                 </div>
 
                 {/*중간 여백*/}
