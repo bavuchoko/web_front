@@ -19,7 +19,7 @@ function IaroLayout(props) {
     return (
         <div className="iaroBody">
             <Routes>
-                <Route path="/card" element={<CardTemplete/>} />
+                <Route path="/" element={<CardTemplete/>} />
                 {/*<Route path="/card" element={<CardTemplete value={value} setValue={setValue} handleSubmit={handleSubmit}  />} />*/}
             </Routes>
         </div>

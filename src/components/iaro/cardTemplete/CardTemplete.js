@@ -3,10 +3,7 @@ import {DragDropContext} from "react-beautiful-dnd";
 import Column from "./Column";
 
 function CardTemplete(props) {
-
-
-
-        const tasks_d = [
+            const tasks_d = [
                 {
                     key: "1",
                     id: "1",
@@ -78,10 +75,10 @@ function CardTemplete(props) {
                     time: "2023-01-01 00:00"
                 }
         ];
-        const columns_d =[
+        const workSet =[
                 {
                     id: "1",
-                    title: "To do",
+                    title: "To Do",
                     taskIds:["1","2","3","4"]
                 },
                 {
@@ -91,12 +88,12 @@ function CardTemplete(props) {
                 },
                 {
                     id: "3",
-                    title: "Done",
+                    title: "POSTPONED",
                     taskIds:[]
                 },
                 {
                     id: "4",
-                    title: "Done",
+                    title: "SUSPENDED",
                     taskIds:[]
                 },                {
                     id: "5",
@@ -110,7 +107,7 @@ function CardTemplete(props) {
 
 
     const [task, setTasks] = useState(tasks_d);
-    const [column, setColumns] = useState(columns_d);
+    const [column, setColumns] = useState(workSet);
     const [columnOrder, setColumnOrders] = useState(columnOrders_d);
 
     const onDragEnd = useCallback((result) => {
@@ -153,6 +150,7 @@ function CardTemplete(props) {
 
 
     return (
+
         <div>
             <DragDropContext onDragEnd={onDragEnd}>
                 <div className="flex justify-center">
