@@ -1,16 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Menu from "./Menu";
-import axios from "axios";
 import {useQuery} from "react-query";
+import {noAuhApi} from "../../../apis/instance/Instance";
 
 const getMenuList = async  () =>{
-    const { data } = await axios.get("http://localhost:8080/menus");
+    const { data } = await noAuhApi({
+        url:`/menus`,
+        method: 'get',
+    })
     return data;
 }
 
 const Menus = React.memo(() => {
 
+
     const query =useQuery('menus', getMenuList);
+
     console.log(query.data)
     return (
         <div>

@@ -1,29 +1,28 @@
 import axios from 'axios'
 
 // const BASE_URL = 'https://pjs.or.kr:8080/api';
-const BASE_URL = 'http://localhost:8080/api';
+const BASE_URL = 'http://localhost:8080/';
 // url 호출 시 기본 값 셋팅
+
 const api = axios.create({
-    // baseURL: "https://pjs.or.kr:8080/api",
     baseURL: BASE_URL,
-    headers: { "Content-type": "application/json" }, // data type
 });
 
 // 요청 인터셉터
-    // 단순 get요청으로 인증값이 필요없는 경우
-const axiosApi = (url, options) => {
-    const instance = axios.create({ baseURL: url, ...options })
-    return instance
+// 단순 get요청으로 인증값이 필요없는 경우
+const axiosApi = (options) => {
+    return axios.create({ baseURL: BASE_URL, ...options })
 }
-    // post, delete등 api요청 시 인증값이 필요한 경우
-const axiosAuthApi  = (url, options) => {
+
+
+// post, delete등 api요청 시 인증값이 필요한 경우
+const axiosAuthApi  = (options) => {
     const token= localStorage.getItem("accessToken");
-    const instance = axios.create({
-        baseURL: url,
+    return axios.create({
+        baseURL: BASE_URL,
         headers: { Authorization: 'Bearer ' + token },
         ...options,
     })
-    return instance
 }
 
 // 응답 인터셉터
@@ -44,7 +43,7 @@ api.interceptors.response.use(
                 const originalRequest = config;
                 // token refresh 요청
                 const { data } = await axios.get(
-                    `http://localhost:3000/api/user/reissue`,
+                    `http://localhost:3000/auth/reissue`,
                 );
                 // 새로운 토큰 저장
                 // dispatch(userSlice.actions.setAccessToken(data.data.accessToken)); store에 저장
