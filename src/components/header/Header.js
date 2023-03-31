@@ -1,5 +1,4 @@
 import React, {useCallback, useState} from 'react';
-import bell from '../../assets/icons/bell.png'
 import pepe from '../../assets/portfolio/pepe.jpg'
 import anonymous from '../../assets/icons/anonymous.png'
 import notification from '../../assets/icons/notification.png'
@@ -69,7 +68,7 @@ function Header(props) {
 
                 {/*메뉴목록*/}
                 <div className="w-8/12 2xl:w-6/12  h-24 hidden md:block">
-                    <Menus/>
+                    {/*<Menus/>*/}
                 </div>
 
                 {/*중간 여백*/}

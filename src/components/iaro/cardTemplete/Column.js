@@ -10,7 +10,7 @@ const onee =()=> {
 const Column = React.memo(({column, tasks, values, setValue, handleSubmit}) => {
     return (
         <div className="px-2 mx-6 w-[300px] columns rounded-md  shadow-2xl mt-[100px]">
-
+ㅗ
             <button
                 className="py-2 pl-1 inline-block text-[14px] font-extrabold text-white "
             >{column.title}
