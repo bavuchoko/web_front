@@ -18,7 +18,7 @@ const Menus = React.memo(() => {
 
     return (
         <div>
-            <div className="md:flex hidden">
+            <div className="md:flex">
                 {!query.isLoading && (
                     query.data.map((menu)=>(
                     <Menu

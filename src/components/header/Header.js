@@ -68,7 +68,7 @@ function Header(props) {
 
                 {/*메뉴목록*/}
                 <div className="w-8/12 2xl:w-6/12  h-24 hidden md:block">
-                    {/*<Menus/>*/}
+                    <Menus/>
                 </div>
 
                 {/*중간 여백*/}
