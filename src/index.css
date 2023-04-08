@@ -72,3 +72,17 @@ to {
 .box.vibration {
     animation: vibration 0.1s;
 }
+.forbidden-loginmsg{
+    color: red;
+    font-size: 12px;
+}
+.checked-loginmsg{
+    color: green;
+    font-size: 12px;
+}
+.sign-with-google{
+    display: inline-block;
+    left: calc(50% - 100px);
+    position: relative;
+    width: 124px;
+}

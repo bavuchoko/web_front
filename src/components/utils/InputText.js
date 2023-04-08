@@ -5,7 +5,8 @@ import forbidden from "../../assets/icons/forbidden.png"
 import checked from "../../assets/icons/checked.png"
 import { useNavigate } from 'react-router-dom';
 import {noAuhApi} from "../../apis/instance/Instance";
-import login from "../user/Login";
+import googleIcon from '../../assets/icons/google.png'
+import {Google, GoogleIcon, JoinDiv, NAVER} from "../buttons/loginButtons";
 
 
 const InputBox = styled.input`
@@ -28,23 +29,6 @@ const Message = styled.p`
   margin: 0 auto;
   text-indent: 10px;
 `;
-const JoinDiv = styled.button`
-  display: block;
-  width: 320px;
-  height: 50px;
-  border-radius: 4px;
-  color: white;
-  margin: 0 auto;
-  background-color: #4e7bf8;
-  font-size: 14px;
-  padding-top: 5px;
-  font-family: "Roboto";
-  margin-top: 50px;
-  &:active{
-    transform: scale(0.95);
-  }
-
-`;
 function InputText(props) {
     const navigate = useNavigate();
     const [username, setUsername]=useState("");
@@ -58,7 +42,9 @@ function InputText(props) {
         if(emailRegEx.test(username)){
             setMessage("")
             setMailType(true)
+            setMessage("로그인 하세요")
         }else{
+            setMailType(false)
             setMessage("이메일 형식이 아닙니다")
         }
         console.log(mailType)
@@ -73,7 +59,7 @@ function InputText(props) {
             if(emailRegEx.test(e.target.value)) {
                 setMailType(true)
                 setNameInputMode(false)
-                setMessage("")
+                setMessage("로그인 하세요")
             }else{
                 setMailType(false)
                 setMessage("이메일 형식이 아닙니다")
@@ -137,10 +123,16 @@ function InputText(props) {
                     </div>
                 }
                 {!mailType &&
-                    <img className="w-4 h-4 in absolute ml-3" src={forbidden}/>
+                    <div>
+                        <img className="w-4 h-4 in absolute ml-3 mt-1.5" src={forbidden}/>
+                        <span className="forbidden-loginmsg">{message}</span>
+                    </div>
                 }
                 {mailType && nameInputMode &&
-                        <img className="w-4 h-4 in absolute ml-3" src={checked}/>
+                    <div>
+                        <img className="w-4 h-4 in absolute ml-3 mt-1.5" src={checked}/>
+                        <span className="checked-loginmsg">{message}</span>
+                    </div>
                     }
                 {!nameInputMode &&
                     <div>
@@ -159,9 +151,12 @@ function InputText(props) {
                 </div>
 
             </form>
-            <JoinDiv>
-                JOIN US
-            </JoinDiv>
+            <NAVER>NAVER</NAVER>
+            <Google>
+                <GoogleIcon src={googleIcon} alt="Button Icon" />
+                <p className="sign-with-google">Sign with Google</p>
+            </Google>
+            <JoinDiv>JOIN US</JoinDiv>
         </div>
     );
 }
