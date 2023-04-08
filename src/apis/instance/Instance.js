@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://parkjongsu:8443/api';
+const BASE_URL = 'https://parkjongsu:8443/';
 // const BASE_URL = 'http://localhost:8443/';
 // url 호출 시 기본 값 셋팅
 
